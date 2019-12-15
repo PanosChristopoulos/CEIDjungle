@@ -11,9 +11,11 @@ int main(void) {
     if(pid == 0) {
         printf("Gia to child process no %d ",i);
       printf("parent process id:%d child process id:%d\n", getppid(), getpid());
+      sleep(1);
       exit(0);
     }//afou ginei to exit tou child, me to wait synexizei h ektelesh tou parent
     else  {
+      sleep(1);
       wait(NULL);
     }
   }
