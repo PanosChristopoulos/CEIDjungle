@@ -4,9 +4,7 @@
 #include <sys/wait.h>
 
 int dierg = 10;
-
 int counter = 0;
-
 void child() 
 { //Δημιουργήσαμε την child function για να ελέγχεται ο ακριβής αριθμός των παιδιών και να καλείται η fork αναδρομικά
     pid_t pid;
@@ -17,7 +15,8 @@ void child()
             printf("To fork apetyxe sth diergasia = %d\n", counter);
         }
         else if (pid == 0) {
-            printf("Dhmiourgithike to %d o paidi me pid %ld\n",counter, (long)getpid()); //το pid του παιδιού που δημιουργήθηκε
+            printf("Dhmiourgithike to %d o paidi me pid %ld\n",counter, (long)getpid());
+            sleep(1); //το pid του παιδιού που δημιουργήθηκε
             if (counter == dierg) {
                 exit(0);
             }
@@ -44,7 +43,7 @@ int main(void)
         return -1;
     }
     if (pid == 0) {
-        child();
+        child();sleep(1);
     }
     else {
         wait(&pid);
