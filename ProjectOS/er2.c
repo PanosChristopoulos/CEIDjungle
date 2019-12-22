@@ -9,7 +9,7 @@ int main(void) {
     int pid = fork();
  //mono se periptwsh pou h diergasia einai child(pid=0) energopoietai
     if(pid == 0) {
-        printf("Gia to child process no %d ",i);
+        printf("Για το child process no %d ",i);
       printf("parent process id:%d child process id:%d\n", getppid(), getpid());
       sleep(1);
       exit(0);

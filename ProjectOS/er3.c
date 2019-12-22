@@ -12,10 +12,10 @@ void child()
         counter++;
         pid = fork();
        if (pid < 0) {
-            printf("To fork apetyxe sth diergasia = %d\n", counter);
+            printf("Το fork απέτυχε στη διεργασία %d\n", counter);
         }
         else if (pid == 0) {
-            printf("Dhmiourgithike to %d o paidi me pid %ld\n",counter, (long)getpid());
+            printf("Δημιουργήθηκε το %dο παιδί με pid %ld\n",counter, (long)getpid());
             sleep(1); //το pid του παιδιού που δημιουργήθηκε
             if (counter == dierg) {
                 exit(0);
@@ -28,7 +28,7 @@ void child()
             long var  = pid;
             int  ppid;
             wait(&pid);
-            printf("To pid mou einai %ld eimai o pateras tou %ld child, o pateras mou einai %ld \n", (long)getpid(), var, (long)getppid());
+            printf("To pid μου είναι %ld είμαι ο πατέρας του %ld child, ο πατέρας μου είναι %ld \n", (long)getpid(), var, (long)getppid());
             exit(0);
         }   
     }
@@ -39,7 +39,7 @@ int main(void)
     pid_t pid;
     pid = fork();
     if (pid < 0) {
-        printf("To fork apetyxe %d\n", counter);
+        printf("Το fork απέτυχε %d\n", counter);
         return -1;
     }
     if (pid == 0) {
