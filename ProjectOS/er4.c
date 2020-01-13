@@ -5,7 +5,7 @@
 
 #define N 5000
 
-int nothing(){
+int foo(){
 	int x = 0;
 	x++;
 	return x;
@@ -23,7 +23,7 @@ int main(void){
 	while(i <= N){
 		pid[i] = fork();
 		if(pid[i] == 0){
-			nothing();		
+			foo();		
 			exit(0);		 		
 		}
 	i++;
